@@ -1,4 +1,4 @@
-package com.test.testinfo;
+package com.media.demo;
 
 import android.app.Service;
 import android.content.Context;
@@ -9,8 +9,10 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.media.session.MediaSessionCompat;
 
+import com.media.demo.helper.MediaPlayerHelper;
+
 /**
- * Created by cuiyang on 16/8/18.
+ * Created by zx on 16/8/18.
  */
 
 public class AudioPlayerService extends Service {

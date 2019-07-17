@@ -1,4 +1,4 @@
-package com.test.testinfo;
+package com.media.demo;
 
 /**
  * Created by cuiyang on 16/8/21.

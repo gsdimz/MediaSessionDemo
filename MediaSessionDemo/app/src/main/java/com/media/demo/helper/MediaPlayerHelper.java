@@ -1,4 +1,4 @@
-package com.test.testinfo;
+package com.media.demo.helper;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -20,6 +20,10 @@ import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
 import android.widget.SeekBar;
+
+import com.media.demo.AudioPlayerService;
+import com.media.demo.MusicEntity;
+import com.media.demo.R;
 
 import java.io.IOException;
 import java.util.List;
@@ -78,8 +82,6 @@ public class MediaPlayerHelper implements
 
         @Override
         public void onPlayFromSearch(String query, Bundle extras) {
-//            Uri uri = extras.getParcelable(AudioPlayerService.PARAM_TRACK_URI);
-//            onPlayFromUri(uri, null);
             onPlayFromUri(null, null);
         }
 

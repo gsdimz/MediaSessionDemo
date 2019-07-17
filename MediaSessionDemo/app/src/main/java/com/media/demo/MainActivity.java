@@ -1,4 +1,4 @@
-package com.test.testinfo;
+package com.media.demo;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -16,9 +16,14 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.media.demo.helper.MediaPlayerHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * MainActivity.
+ */
 public class MainActivity extends Activity implements View.OnClickListener, ServiceConnection,
         SeekBar.OnSeekBarChangeListener, MediaPlayerHelper.MediaPlayerUpdateCallBack {
     private MediaControllerCompat mMediaController;
@@ -65,18 +70,18 @@ public class MainActivity extends Activity implements View.OnClickListener, Serv
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgLast = (ImageButton) findViewById(R.id.img_last);
-        imgPause = (ImageButton) findViewById(R.id.img_pause);
-        imgNext = (ImageButton) findViewById(R.id.img_next);
+        imgLast = findViewById(R.id.img_last);
+        imgPause = findViewById(R.id.img_pause);
+        imgNext = findViewById(R.id.img_next);
 
         imgLast.setOnClickListener(this);
         imgPause.setOnClickListener(this);
         imgNext.setOnClickListener(this);
 
-        MusicTitle = (TextView) findViewById(R.id.Music_title);
-        progressSeek = (SeekBar) findViewById(R.id.progress_seek);
-        timeLeft = (TextView) findViewById(R.id.time_left);
-        timeRight = (TextView) findViewById(R.id.time_right);
+        MusicTitle = findViewById(R.id.Music_title);
+        progressSeek = findViewById(R.id.progress_seek);
+        timeLeft = findViewById(R.id.time_left);
+        timeRight = findViewById(R.id.time_right);
 
 
         progressSeek.setOnSeekBarChangeListener(this);
@@ -139,14 +144,14 @@ public class MainActivity extends Activity implements View.OnClickListener, Serv
         List<MusicEntity> list = new ArrayList<MusicEntity>();
         MusicEntity entity = new MusicEntity();
         entity.setUrl("http://other.web.nf01.sycdn.kuwo.cn/resource/n3/72/31/1295078204.mp3");
-        entity.setAlbum("Stranger Under My Skin");
-        entity.setMusicTitle("六月飞霜");
-        entity.setSinger("陈奕迅");
+        entity.setAlbum("奥运会专辑");
+        entity.setMusicTitle("北京欢迎你");
+        entity.setSinger("群星");
         list.add(entity);
         MusicEntity entity1 = new MusicEntity();
         entity1.setUrl("http://other.web.nf01.sycdn.kuwo.cn/resource/n1/60/10/3227644505.mp3");
-        entity1.setAlbum("上五楼的快乐生活");
-        entity1.setMusicTitle("心的距离");
+        entity1.setAlbum("淘汰");
+        entity1.setMusicTitle("淘汰");
         entity1.setSinger("陈奕迅");
         list.add(entity1);
         return list;
@@ -198,9 +203,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Serv
     public void onBufferingUpdate(MediaPlayer mediaPlayer, int percent) {
         //设置二级缓冲显示位置。
         progressSeek.setSecondaryProgress(percent);
-//        int currentProgress = seekBar.getMax()
-//                * mediaPlayer.getCurrentPosition() / mediaPlayer.getDuration();
-//        Log.e(getClass().getName(),currentProgress + "% play播放进度", percent + " buffer-缓冲进度");
     }
 
     @Override
