@@ -1,0 +1,3 @@
+# MediaSessionDemo
+MediaSession的Demo，通过MediaSession的方式可以进行应用间音乐信息交互
+MediaSession在服务中获得Token对象，通过Binder把Token传递给绑定服务的Activity，就可以通过MediaController,来进行音乐播放器的操控了
